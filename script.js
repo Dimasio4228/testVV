@@ -21,19 +21,7 @@ tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунд�
 tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
-    try{
-
-        window.alert( tg.initDataUnsafe.user.first_name+` ` +tg.initDataUnsafe.user.username);
-        const data = {first_name:  tg.initDataUnsafe.user.first_name,
-            username:tg.initDataUnsafe.user.username,
-
-
-        };
 
         tg.sendData(JSON.stringify("Вы записались на прием!!!"));
-        window.alert( tg.initDataUnsafe.user.first_name+` ` +tg.initDataUnsafe.user.username);}
-    catch (e) {
-        window.alert(`${e}`);
-    }
     //при клике на основную кнопку отправляем данные в строковом виде
 });
