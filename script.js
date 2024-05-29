@@ -1,17 +1,14 @@
 let tg = window.Telegram.WebApp;
 
-let user;
-let queryId;
+
 tg.ready();
 tg.expand();
-tg.MainButton.show()
-
-try {
-    user=tg.initDataUnsafe.user.username;
-    queryId=tg.initDataUnsafe.user.first_name;
-}
-
-catch (e) {window.alert("Failed to load Telegram User");}
+window.onscroll = function(ev) {
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                // пользователь прокрутил страницу до конца, показываем кнопку
+                tg.MainButton.show()
+        }
+};
 
 
 tg.MainButton.text = "Записаться"; //изменяем текст кнопки
