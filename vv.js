@@ -42,7 +42,7 @@ bot2.on('message', async (ctx) => {
             '  \n' +
             'Или мечта все-таки "сбыточная" и ваш ответ тут', {
             reply_markup: {
-                keyboard: [
+                inline_keyboard: [
                     [{text: 'Узнай как', web_app: {url: web_link}}]
                 ]
             }
